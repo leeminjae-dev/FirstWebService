@@ -42,7 +42,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.session:spring-session-jdbc'
-    implementation('org.mariadb.jdbc:maradb-java-client')
+    implementation('org.mariadb.jdbc:mariadb-java-client')
 }
 
 test {
