@@ -22,7 +22,7 @@ public class WebSecurityConfigurerAdapter extends org.springframework.security.c
                 .authorizeRequests()
                 .antMatchers("/","/static/**", "/js/app", "/images/**", "/js/**", "/h2-console/***")
                 .permitAll()
-                .antMatchers("/api/v1/**").hasRole(Role.USER.name())
+                .antMatchers("/api/v1/**").hasRole(Role.GUEST.name())
                 .anyRequest().authenticated()
                 .and()
                     .logout()
