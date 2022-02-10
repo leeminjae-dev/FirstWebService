@@ -1,8 +1,21 @@
 {{>layout/header}}
-<h5>스프링부트로 시작하는 웹 서비스</h5>
+<h2>쓰레기통</h2>
 <div class="col-md-12">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
-    <br/>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
+            {{#userName}}
+                 <span id = "user">{{userName}}님 안녕하세요!</span>
+            <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+            {{/userName}}
+            {{^userName}}
+                <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+            {{/userName}}
+
+        </div>
+    </div>
+
     <br/>
     <!-- 목록 출력 영역 -->
     <table class="table table-horizontal table-bordered">
