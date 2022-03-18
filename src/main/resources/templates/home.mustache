@@ -1,0 +1,36 @@
+{{>layout/header}}
+<body>
+<!-- Navigation-->
+{{>layout/navBar}}
+
+<!-- Header-->
+<header class="bg-orange py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">자몽에 오신걸 환영합니다!</h1>
+            <p class="lead fw-normal text-white-50 mb-0">sub</p>
+        </div>
+    </div>
+</header>
+<!-- Section-->
+
+<section class="py-5">
+
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2>신청 가능 봉사</h2>
+        <div class="volunteerCard">
+        </div>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
+            {{>layout/volunteerCard}}
+        </div>
+        <div class="col-md-auto text-end ">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">봉사 등록</button>
+        </div>
+    </div>
+
+    </div>
+
+</section>
+
+
+{{>layout/footer}}

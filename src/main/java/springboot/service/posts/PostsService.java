@@ -55,7 +55,7 @@ public class PostsService {
         Posts entity = postsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException());
 
-        entity.update(requestDto.getTitle(), requestDto.getContent());
+        entity.update(requestDto.getTitle(), requestDto.getContent(), requestDto.getDate(), requestDto.getDifficulty());
 
         return postsRepository.save(entity).getId();
     }

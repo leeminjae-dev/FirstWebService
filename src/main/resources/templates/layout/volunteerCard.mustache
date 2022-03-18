@@ -1,0 +1,41 @@
+{{#posts}}
+
+    <div class="volunteerCard">
+        <a href="/posts/{{id}}" style="text-decoration:none; color: inherit; ">
+        <div class="col mb-5">
+            <div class="card h-100">
+                <!-- Product image-->
+                <div class="volunteerCardImage">
+                    <img class="card-img-top" src="https://image.news1.kr/system/hp/2021/7/28/4895792/dims/optimize"
+                         alt="..."/>
+                </div>
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="fw-bolder">{{title}}</h5>
+                        <!-- Product reviews-->
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+
+                        <script>
+                            for(i=1; i<= parseInt({{difficulty}});i++) {
+                                document.write("<div class='bi-star-fill'></div>");
+                            }
+                        </script>
+                        </div>
+                        <!-- Product price-->
+                        <h7>{{date}}</h7>
+
+                    </div>
+
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/posts/{{id}}">신청하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </a>
+{{/posts}}

@@ -4,16 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import springboot.config.auth.LoginUser;
 import springboot.config.auth.dto.SessionUser;
-import springboot.domain.posts.Posts;
 import springboot.service.posts.PostsService;
 import springboot.web.dto.PostsListResponseDto;
 import springboot.web.dto.PostsResponseDto;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -28,8 +25,9 @@ public class IndexController {
 
         if (user != null) {
             model.addAttribute("userName", user.getName());
+            model.addAttribute("picture", user.getPicture());
         }
-        return "index";
+        return "home";
     }
 
     @GetMapping("/posts/save")
@@ -43,5 +41,17 @@ public class IndexController {
         model.addAttribute("post", dto);
 
         return "posts-update";
+    }
+
+    @GetMapping("/posts/{id}")
+    public String postsView(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
+        PostsResponseDto dto = postsService.findById(id);
+        model.addAttribute("post", dto);
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+            model.addAttribute("picture", user.getPicture());
+        }
+        return "post-view";
     }
 }

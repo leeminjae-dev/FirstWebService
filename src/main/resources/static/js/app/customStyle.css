@@ -1,0 +1,30 @@
+.volunteerCard:hover .volunteerCardImage{
+    transform:scale(1.005);
+    transition: transform .5s;
+
+}
+.volunteerCard .volunteerCardImage{
+    transform:scale(1.0);
+    transition: transform .5s;
+
+}
+
+.volunteerCard:hover .card{
+    transform:scale(1.05);
+    transition: transform .5s;
+
+}
+
+.volunteerCard .card{
+    transform:scale(1.0);
+    transition: transform .5s;
+
+}
+
+.profile-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 70%;
+    overflow: hidden;
+}
